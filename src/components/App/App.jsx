@@ -33,7 +33,7 @@ export class App extends Component {
     const { handleLeaveFeedback, positivePercentage } = this;
     const totalFeedback = this.countTotalFeedback();
     const optionKeys = Object.keys(this.state);
-    const optionValues = Object.values(this.state);
+
     return (
       <Container>
         <Section title="Please leave feedback">
@@ -43,7 +43,7 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          {optionValues.some(optionValue => optionValue > 0) ? (
+          {totalFeedback ? (
             <Statistics
               good={this.state.good}
               neutral={this.state.neutral}
